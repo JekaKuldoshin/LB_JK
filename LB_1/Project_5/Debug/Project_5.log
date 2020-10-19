@@ -1,3 +1,3 @@
 ﻿  Project_5.cpp
-D:\LB_JK\LB_JK\LB_1\Project_5\Project_5.cpp(11,13): warning C4101: pc: неиспользованная локальная переменная
+D:\LB_JK\LB_JK\LB_1\Project_5\Project_5.cpp(18,13): warning C4101: pc: неиспользованная локальная переменная
   Project_5.vcxproj -> D:\LB_JK\LB_JK\LB_1\Project_5\Debug\Project_5.exe
