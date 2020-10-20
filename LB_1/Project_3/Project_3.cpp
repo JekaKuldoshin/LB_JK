@@ -9,14 +9,14 @@ int main()
 {
 
     setlocale(LC_ALL, "Rus");
-        int a,b,c,d;
+       long long a,b,c,d;
         printf("Введите число которое нужно возвести в а^8: ");
-        scanf_s("%d", &a);
+        scanf_s("%lld", &a);
         b = a * a;
         c = b * b;
         d = c * c;
 
-        printf("Результат: %.d\n",d);
+        printf("Результат: %.lld\n",d);
 
 
 }
