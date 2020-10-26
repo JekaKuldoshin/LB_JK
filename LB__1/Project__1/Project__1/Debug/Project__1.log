@@ -1,0 +1,4 @@
+﻿  Project__1.cpp
+D:\LB_JK\LB_JK\LB__1\Project__1\Project__1\Project__1.cpp(13,9): warning C4477: "printf": в строке форматирования "%f" требуется аргумент типа "double", но вариативный аргумент "1" имеет тип "unsigned int"
+D:\LB_JK\LB_JK\LB__1\Project__1\Project__1\Project__1.cpp(14,9): warning C4477: "printf": в строке форматирования "%lf" требуется аргумент типа "double", но вариативный аргумент "1" имеет тип "unsigned int"
+  Project__1.vcxproj -> D:\LB_JK\LB_JK\LB__1\Debug\Project__1.exe

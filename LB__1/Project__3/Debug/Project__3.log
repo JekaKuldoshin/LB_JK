@@ -1,0 +1,8 @@
+﻿  Project__3.cpp
+D:\LB_JK\LB_JK\LB__1\Project__3\Project__3.cpp(14,13): warning C4477: "scanf_s": в строке форматирования "%d" требуется аргумент типа "int *", но вариативный аргумент "1" имеет тип "int64_t *"
+D:\LB_JK\LB_JK\LB__1\Project__3\Project__3.cpp(14,13): message : рекомендуется использовать "%lld" в строке форматирования
+D:\LB_JK\LB_JK\LB__1\Project__3\Project__3.cpp(14,13): message : рекомендуется использовать "%I64d" в строке форматирования
+D:\LB_JK\LB_JK\LB__1\Project__3\Project__3.cpp(19,12): warning C4477: "printf": в строке форматирования "%d" требуется аргумент типа "int", но вариативный аргумент "1" имеет тип "int64_t"
+D:\LB_JK\LB_JK\LB__1\Project__3\Project__3.cpp(19,12): message : рекомендуется использовать "%lld" в строке форматирования
+D:\LB_JK\LB_JK\LB__1\Project__3\Project__3.cpp(19,12): message : рекомендуется использовать "%I64d" в строке форматирования
+  Project__3.vcxproj -> D:\LB_JK\LB_JK\LB__1\Debug\Project__3.exe
