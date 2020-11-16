@@ -31,19 +31,20 @@ int main(void) {
 	else
 	{
 
-	bx = b * x;
-	t1 = (1 / pow(a, 4)) * ((pow(x, 3) / 3) - 3 * bx + 3 * pow(b, 2) * log(x + (pow(b, 3)) / x));
+		bx = b * x;
+		t1 = (1 / pow(a, 4)) * ((pow(x, 3) / 3) - 3 * bx + 3 * pow(b, 2) * log(x + (pow(b, 3)) / x));
 
 
-	/*t1 = (pow(x, 3) - 9 * b * x + 9 * pow(9, 2) * log(x + (pow(b, 3) / x))) / (3 * pow(a, 4));*/
+		/*t1 = (pow(x, 3) - 9 * b * x + 9 * pow(9, 2) * log(x + (pow(b, 3) / x))) / (3 * pow(a, 4));*/
 		
 
-	ax = a * x;
-	t2 = (1 / (1 - sin(ax))) + (1 / a) * tan(ax / 2);
 
-	printf("t1 = %lg\n", t1);
-	printf("t2 = %lg\n", t2);
-	
+		ax = a * x;
+		t2 = (1 / (1 - sin(ax))) + (1 / a) * tan(ax / 2);
+
+		printf("t1 = %lg\n", t1);
+		printf("t2 = %lg\n", t2);
 	}
+	
 	return 0;
 }
