@@ -13,14 +13,23 @@ int main(void) {
 
 	unsigned k;
 
-	while (true)
-	{
-		printf("Введите число k >");
-		scanf("%u", k);
-
-		if( k%100==10||k%100==11||)
-
-	}
 	
-	
+		printf("Введите число k > ");
+		scanf("%u", &k);
+		
+		if (k % 100 == 10 || k % 100 == 11)
+
+		{
+			printf("У меня %d грибов", k);
+
+			if (k % 100 == 1)
+			{
+				printf("У меня %d гриб", k);
+
+				if (k % 100 >= 2)
+				{
+					printf("У меня %d грибa", k);
+				}
+			}
+		}
 }
