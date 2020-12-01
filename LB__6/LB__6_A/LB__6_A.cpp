@@ -20,7 +20,7 @@ int main(void)
 
     int my_num;
     srand(time(NULL));
-    int comp_num = 1 + rand() % 10;
+    int comp_num = 1 + rand() % 100;
     int count = 0;
 
     printf("|\t                           PC    VS    HUMAN                        |\n");
@@ -46,7 +46,7 @@ int main(void)
             printf("Поздравляем! Вы угадали с %d попытки, число загаданное PC = %d\n\n", count, comp_num);
             break;
         }
-        if (my_num > 10)
+        if (my_num > 100)
         {
             printf("ERROR!! PC создает число до 10!\n\n");
             goto link;
