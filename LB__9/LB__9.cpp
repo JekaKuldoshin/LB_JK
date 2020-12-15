@@ -26,33 +26,18 @@ int main()
         cout << endl;
     }
     cout << endl;
-    for (int i = 0; i < N; i++)
-
-    {
-
-        for (int j = 0; j < N; j++)
-            if(i == j )
-        {
-
-            b = a[i][j];
-
-            a[i][j] = a[i][N - 1 - j];
-
-            a[i][N - 1 - j] = b;
-
-        }
-            
-
-    }
-
-    cout << "Модернизированный массив: " << endl;
-
+    for (i = 0; i < N; i++)
+        for (j = 0; j < N; j++)
+            if (i >= j&&i+j<=N-1) {
+                b = a[i][j];
+                a[i][j] = a[i][N - 1 - j];
+                a[i][N - 1 - j] = b;
+            }
     for (i = 0; i < N; i++) {
         for (j = 0; j < N; j++) {
-            cout << setw(4) << a[i][j];
+            cout<< setw(4)<< a[i][j];
         }
         cout << endl;
     }
-    _getch();
     return 0;
 }
