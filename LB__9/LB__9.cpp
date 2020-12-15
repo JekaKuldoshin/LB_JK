@@ -33,6 +33,9 @@ int main()
                 a[i][j] = a[i][N - 1 - j];
                 a[i][N - 1 - j] = b;
             }
+
+    cout << "Модернизированный массив: " << endl;
+
     for (i = 0; i < N; i++) {
         for (j = 0; j < N; j++) {
             cout<< setw(4)<< a[i][j];
