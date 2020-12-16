@@ -28,7 +28,7 @@ void Transfer(int arr[N])
 	cout << "----------------------------------" << endl;
 	cout << "Выводим матрицу:" << endl;
 
-	for (int i = 0; i < COLS; i++)
+	for (int i = 0; i < COLS; i++)   //Выводим матрицу
 	{
 		for (int j = 0; j < ROWS; j++)
 		{
@@ -48,7 +48,7 @@ void Transfer(int arr[N])
 			if (i == j)
 			{
 
-				b = arr2[i][j];               //Делаем обмен
+				b = arr2[i][j];               //Делаем обмен через доп. переменную
 
 				arr2[i][j] = arr2[i][COLS - 1 - j];
 
