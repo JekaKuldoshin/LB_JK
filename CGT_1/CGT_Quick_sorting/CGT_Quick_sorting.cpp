@@ -35,7 +35,18 @@ public:
 };
 
 
+//Обмен массива 
+void swapSort(int* arr, int size)
+{
+	int buffer;
+	for (int i = 0; i < (size / 2); i++)
+	{
+		buffer = arr[i];
+		arr[i] = arr[size - 1 - i];               //Обмен 
+		arr[size - 1 - i] = buffer;
 
+	}
+}
 
 
 //ф-ция "Быстрая сортировка Хоара"-сортировки
@@ -102,23 +113,17 @@ link:
 	cout << "   Быстрая сортировка Хоара   |" << endl;
 	cout << "------------------------------|" << endl << endl;
 
-	/*int size = 0;*/
+	
 	int size1 = 5;
 	cout << "Размер массива -> " << size1 << endl << endl;
-	/*cin >> size;*/
-	/*if (size > 0)
-	{*/
+	
 	int* A1 = new int[size1];
 	for (int i = 0; i <= (size1 - 1); i++)
 	{
 		A1[i] = rand() % (size1 * 5);
 		cout << A1[i] << " | ";
 	}
-	//for (int k = 0; k < size; k++)
-	//{
-	//	A[k] = size - k; // запись значений по убыванию
-	//	cout << A[k] << " | ";
-	//}
+	
 
 	quickSort(A1, 0, size1 - 1); // сортировка
 
@@ -145,23 +150,17 @@ link:
 	cout << "   Быстрая сортировка Хоара   |" << endl;
 	cout << "------------------------------|" << endl << endl;
 
-	/*int size = 0;*/
+	
 	int size2 = 10;
 	cout << "Размер массива -> " << size2 << endl << endl;
-	/*cin >> size;*/
-	/*if (size > 0)
-	{*/
+	
 	int* A2 = new int[size2];
 	for (int i = 0; i <= (size2 - 1); i++)
 	{
 		A2[i] = rand() % (size2 * 5);
 		cout << A2[i] << " | ";
 	}
-	//for (int k = 0; k < size; k++)
-	//{
-	//	A[k] = size - k; // запись значений по убыванию
-	//	cout << A[k] << " | ";
-	//}
+	
 
 	quickSort(A2, 0, size2 - 1); // сортировка
 
@@ -189,23 +188,17 @@ link:
 	cout << "   Быстрая сортировка Хоара   |" << endl;
 	cout << "------------------------------|" << endl << endl;
 
-	/*int size = 0;*/
+	
 	int size3 = 15;
 	cout << "Размер массива -> " << size3 << endl << endl;
-	/*cin >> size;*/
-	/*if (size > 0)
-	{*/
+	
 	int* A3 = new int[size3];
 	for (int i = 0; i <= (size3 - 1); i++)
 	{
 		A3[i] = rand() % (size3 * 5);
 		cout << A3[i] << " | ";
 	}
-	//for (int k = 0; k < size; k++)
-	//{
-	//	A[k] = size - k; // запись значений по убыванию
-	//	cout << A[k] << " | ";
-	//}
+	
 
 	quickSort(A3, 0, size3 - 1); // сортировка
 
@@ -231,23 +224,17 @@ link:
 	cout << "   Быстрая сортировка Хоара   |" << endl;
 	cout << "------------------------------|" << endl << endl;
 
-	/*int size = 0;*/
+
 	int size4 = 20;
 	cout << "Размер массива -> " << size4 << endl << endl;
-	/*cin >> size;*/
-	/*if (size > 0)
-	{*/
+	
 	int* A4 = new int[size4];
 	for (int i = 0; i <= (size4 - 1); i++)
 	{
 		A4[i] = rand() % (size4 * 5);
 		cout << A4[i] << " | ";
 	}
-	//for (int k = 0; k < size; k++)
-	//{
-	//	A[k] = size - k; // запись значений по убыванию
-	//	cout << A[k] << " | ";
-	//}
+	
 
 	quickSort(A4, 0, size4 - 1); // сортировка
 
@@ -274,23 +261,16 @@ link:
 	cout << "------------------------------|" << endl << endl;
 
 
-	/*int size = 0;*/
 	int size5 = 25;
 	cout << "Размер массива -> " << size5 << endl << endl;
-	/*cin >> size;*/
-	/*if (size > 0)
-	{*/
+	
 	int* A5 = new int[size5];
 	for (int i = 0; i <= (size5 - 1); i++)
 	{
 		A5[i] = rand() % (size5 * 5);
 		cout << A5[i] << " | ";
 	}
-	//for (int k = 0; k < size; k++)
-	//{
-	//	A[k] = size - k; // запись значений по убыванию
-	//	cout << A[k] << " | ";
-	//}
+	
 
 	quickSort(A5, 0, size5 - 1); // сортировка
 
@@ -316,24 +296,17 @@ link:
 	cout << "   Быстрая сортировка Хоара   |" << endl;
 	cout << "------------------------------|" << endl << endl;
 
-	/*int size = 0;*/
+	
 	int size6 = 30;
 	cout << "Размер массива -> " << size6 << endl << endl;
-	/*cin >> size;*/
-	/*if (size > 0)
-	{*/
+	
 	int* A6 = new int[size6];
 	for (int i = 0; i <= (size6 - 1); i++)
 	{
 		A6[i] = rand() % (size6 * 5);
 		cout << A6[i] << " | ";
 	}
-	//for (int k = 0; k < size; k++)
-	//{
-	//	A[k] = size - k; // запись значений по убыванию
-	//	cout << A[k] << " | ";
-	//}
-
+	
 	quickSort(A6, 0, size6 - 1); // сортировка
 
 	cout << "\nМассив после сортировки:\n";
@@ -358,23 +331,17 @@ link:
 	cout << "   Быстрая сортировка Хоара   |" << endl;
 	cout << "------------------------------|" << endl << endl;
 
-	/*int size = 0;*/
+	
 	int size7 = 35;
 	cout << "Размер массива -> " << size7 << endl << endl;
-	/*cin >> size;*/
-	/*if (size > 0)
-	{*/
+	
 	int* A7 = new int[size7];
 	for (int i = 0; i <= (size7 - 1); i++)
 	{
 		A7[i] = rand() % (size7 * 5);
 		cout << A7[i] << " | ";
 	}
-	//for (int k = 0; k < size; k++)
-	//{
-	//	A[k] = size - k; // запись значений по убыванию
-	//	cout << A[k] << " | ";
-	//}
+	
 
 	quickSort(A7, 0, size7 - 1); // сортировка
 
@@ -400,23 +367,16 @@ link:
 	cout << "   Быстрая сортировка Хоара   |" << endl;
 	cout << "------------------------------|" << endl << endl;
 
-	/*int size = 0;*/
 	int size8 = 40;
 	cout << "Размер массива -> " << size8 << endl << endl;
-	/*cin >> size;*/
-	/*if (size > 0)
-	{*/
+	
 	int* A8 = new int[size8];
 	for (int i = 0; i <= (size8 - 1); i++)
 	{
 		A8[i] = rand() % (size8 * 5);
 		cout << A8[i] << " | ";
 	}
-	//for (int k = 0; k < size; k++)
-	//{
-	//	A[k] = size - k; // запись значений по убыванию
-	//	cout << A[k] << " | ";
-	//}
+	
 
 	quickSort(A8, 0, size8 - 1); // сортировка
 
@@ -443,23 +403,15 @@ link:
 	cout << "------------------------------|" << endl << endl;
 
 
-	/*int size = 0;*/
 	int size9 = 45;
 	cout << "Размер массива -> " << size9 << endl << endl;
-	/*cin >> size;*/
-	/*if (size > 0)
-	{*/
+	
 	int* A9 = new int[size9];
 	for (int i = 0; i <= (size9 - 1); i++)
 	{
 		A9[i] = rand() % (size9 * 5);
 		cout << A9[i] << " | ";
 	}
-	//for (int k = 0; k < size; k++)
-	//{
-	//	A[k] = size - k; // запись значений по убыванию
-	//	cout << A[k] << " | ";
-	//}
 
 	quickSort(A9, 0, size9 - 1); // сортировка
 
@@ -533,9 +485,6 @@ link1:
 		cout << "   Быстрая сортировка Хоара   |" << endl;
 		cout << "------------------------------|" << endl << endl;
 
-
-		/*int size = 0;*/
-
 		cout << "Размер массива -> " << size1 << endl << endl;
 		for (int k = 0; k < size1; k++)
 		{
@@ -565,8 +514,6 @@ link1:
 		cout << "   Быстрая сортировка Хоара   |" << endl;
 		cout << "------------------------------|" << endl << endl;
 
-
-		/*int size = 0;*/
 
 		cout << "Размер массива -> " << size2 << endl << endl;
 		for (int k = 0; k < size2; k++)
@@ -598,8 +545,6 @@ link1:
 		cout << "------------------------------|" << endl << endl;
 
 
-		/*int size = 0;*/
-
 		cout << "Размер массива -> " << size3 << endl << endl;
 		for (int k = 0; k < size3; k++)
 		{
@@ -630,8 +575,6 @@ link1:
 		cout << "------------------------------|" << endl << endl;
 
 
-		/*int size = 0;*/
-
 		cout << "Размер массива -> " << size4 << endl << endl;
 		for (int k = 0; k < size4; k++)
 		{
@@ -660,9 +603,6 @@ link1:
 		cout << "                              |" << endl;
 		cout << "   Быстрая сортировка Хоара   |" << endl;
 		cout << "------------------------------|" << endl << endl;
-
-
-		/*int size = 0;*/
 
 		cout << "Размер массива -> " << size5 << endl << endl;
 		for (int k = 0; k < size5; k++)
@@ -694,8 +634,6 @@ link1:
 		cout << "------------------------------|" << endl << endl;
 
 
-		/*int size = 0;*/
-
 		cout << "Размер массива -> " << size6 << endl << endl;
 		for (int k = 0; k < size6; k++)
 		{
@@ -726,8 +664,6 @@ link1:
 		cout << "------------------------------|" << endl << endl;
 
 
-		/*int size = 0;*/
-
 		cout << "Размер массива -> " << size7 << endl << endl;
 		for (int k = 0; k < size7; k++)
 		{
@@ -756,9 +692,6 @@ link1:
 		cout << "                              |" << endl;
 		cout << "   Быстрая сортировка Хоара   |" << endl;
 		cout << "------------------------------|" << endl << endl;
-
-
-		/*int size = 0;*/
 
 		cout << "Размер массива -> " << size8 << endl << endl;
 		for (int k = 0; k < size8; k++)
@@ -789,8 +722,6 @@ link1:
 		cout << "   Быстрая сортировка Хоара   |" << endl;
 		cout << "------------------------------|" << endl << endl;
 
-
-		/*int size = 0;*/
 
 		cout << "Размер массива -> " << size9 << endl << endl;
 		for (int k = 0; k < size9; k++)
@@ -846,24 +777,16 @@ link1:
 		cout << "------------------------------|" << endl << endl;
 
 
-		/*int size = 0;*/
-
 		cout << "Размер массива -> " << size1 << endl << endl;
+
+		swapSort(A1, size1);  //Функция обратного порядка
+
 		for (int k = 0; k < size1; k++)
 		{
 			cout << A1[k] << " | ";
 		}
 
 		quickSort(A1, 0, size1 - 1); // сортировка
-
-
-		for (int i = 0; i < (size1 / 2); i++)
-		{
-			buffer = A1[i];
-			A1[i] = A1[size1 - 1 - i];               //Обмен 
-			A1[size1 - 1 - i] = buffer;
-
-		}
 
 		cout << "\nМассив после сортировки:\n";
 		for (int k = 0; k < size1; k++)
@@ -886,25 +809,16 @@ link1:
 		cout << "   Быстрая сортировка Хоара   |" << endl;
 		cout << "------------------------------|" << endl << endl;
 
-
-		/*int size = 0;*/
-
 		cout << "Размер массива -> " << size2 << endl << endl;
+
+		swapSort(A2, size2);  //Функция обратного порядка
+
 		for (int k = 0; k < size2; k++)
 		{
 			cout << A2[k] << " | ";
 		}
 
 		quickSort(A2, 0, size2 - 1); // сортировка
-
-
-		for (int i = 0; i < (size2 / 2); i++)
-		{
-			buffer = A2[i];
-			A2[i] = A2[size2 - 1 - i];               //Обмен 
-			A2[size2 - 1 - i] = buffer;
-
-		}
 
 		cout << "\nМассив после сортировки:\n";
 		for (int k = 0; k < size2; k++)
@@ -928,24 +842,16 @@ link1:
 		cout << "------------------------------|" << endl << endl;
 
 
-		/*int size = 0;*/
-
 		cout << "Размер массива -> " << size3 << endl << endl;
+
+		swapSort(A3, size3);  //Функция обратного порядка
+
 		for (int k = 0; k < size3; k++)
 		{
 			cout << A3[k] << " | ";
 		}
 
 		quickSort(A3, 0, size3 - 1); // сортировка
-
-
-		for (int i = 0; i < (size3 / 2); i++)
-		{
-			buffer = A3[i];
-			A3[i] = A3[size3 - 1 - i];               //Обмен 
-			A3[size3 - 1 - i] = buffer;
-
-		}
 
 		cout << "\nМассив после сортировки:\n";
 		for (int k = 0; k < size3; k++)
@@ -968,24 +874,16 @@ link1:
 		cout << "------------------------------|" << endl << endl;
 
 
-		/*int size = 0;*/
-
 		cout << "Размер массива -> " << size4 << endl << endl;
+
+		swapSort(A4, size4);  //Функция обратного порядка
+
 		for (int k = 0; k < size4; k++)
 		{
 			cout << A4[k] << " | ";
 		}
 
 		quickSort(A4, 0, size4 - 1); // сортировка
-
-
-		for (int i = 0; i < (size4 / 2); i++)
-		{
-			buffer = A4[i];
-			A4[i] = A4[size4 - 1 - i];               //Обмен 
-			A4[size4 - 1 - i] = buffer;
-
-		}
 
 		cout << "\nМассив после сортировки:\n";
 		for (int k = 0; k < size4; k++)
@@ -1007,25 +905,16 @@ link1:
 		cout << "   Быстрая сортировка Хоара   |" << endl;
 		cout << "------------------------------|" << endl << endl;
 
-
-		/*int size = 0;*/
-
 		cout << "Размер массива -> " << size5 << endl << endl;
+
+		swapSort(A5, size5);  //Функция обратного порядка
+
 		for (int k = 0; k < size5; k++)
 		{
 			cout << A5[k] << " | ";
 		}
 
 		quickSort(A5, 0, size5 - 1); // сортировка
-
-
-		for (int i = 0; i < (size5 / 2); i++)
-		{
-			buffer = A5[i];
-			A5[i] = A5[size5 - 1 - i];               //Обмен 
-			A5[size5 - 1 - i] = buffer;
-
-		}
 
 		cout << "\nМассив после сортировки:\n";
 		for (int k = 0; k < size5; k++)
@@ -1048,24 +937,16 @@ link1:
 		cout << "------------------------------|" << endl << endl;
 
 
-		/*int size = 0;*/
-
 		cout << "Размер массива -> " << size6 << endl << endl;
+
+		swapSort(A6, size6);  //Функция обратного порядка
+
 		for (int k = 0; k < size6; k++)
 		{
 			cout << A6[k] << " | ";
 		}
 
 		quickSort(A6, 0, size6 - 1); // сортировка
-
-
-		for (int i = 0; i < (size6 / 2); i++)
-		{
-			buffer = A6[i];
-			A6[i] = A6[size6 - 1 - i];               //Обмен 
-			A6[size6 - 1 - i] = buffer;
-
-		}
 
 		cout << "\nМассив после сортировки:\n";
 		for (int k = 0; k < size6; k++)
@@ -1088,24 +969,16 @@ link1:
 		cout << "------------------------------|" << endl << endl;
 
 
-		/*int size = 0;*/
-
 		cout << "Размер массива -> " << size7 << endl << endl;
+
+		swapSort(A7, size7);  //Функция обратного порядка
+
 		for (int k = 0; k < size7; k++)
 		{
 			cout << A7[k] << " | ";
 		}
 
 		quickSort(A7, 0, size7 - 1); // сортировка
-
-
-		for (int i = 0; i < (size7 / 2); i++)
-		{
-			buffer = A7[i];
-			A7[i] = A7[size7 - 1 - i];               //Обмен 
-			A7[size7 - 1 - i] = buffer;
-
-		}
 
 		cout << "\nМассив после сортировки:\n";
 		for (int k = 0; k < size7; k++)
@@ -1128,24 +1001,16 @@ link1:
 		cout << "------------------------------|" << endl << endl;
 
 
-		/*int size = 0;*/
-
 		cout << "Размер массива -> " << size8 << endl << endl;
+
+		swapSort(A8, size8);  //Функция обратного порядка
+
 		for (int k = 0; k < size8; k++)
 		{
 			cout << A8[k] << " | ";
 		}
 
 		quickSort(A8, 0, size8 - 1); // сортировка
-
-
-		for (int i = 0; i < (size8 / 2); i++)
-		{
-			buffer = A8[i];
-			A8[i] = A8[size8 - 1 - i];               //Обмен 
-			A8[size8 - 1 - i] = buffer;
-
-		}
 
 		cout << "\nМассив после сортировки:\n";
 		for (int k = 0; k < size8; k++)
@@ -1168,24 +1033,16 @@ link1:
 		cout << "------------------------------|" << endl << endl;
 
 
-		/*int size = 0;*/
-
 		cout << "Размер массива -> " << size9 << endl << endl;
+
+		swapSort(A9, size9);  //Функция обратного порядка
+
 		for (int k = 0; k < size9; k++)
 		{
 			cout << A9[k] << " | ";
 		}
 
 		quickSort(A9, 0, size9 - 1); // сортировка
-
-
-		for (int i = 0; i < (size9 / 2); i++)
-		{
-			buffer = A9[i];
-			A9[i] = A9[size9 - 1 - i];               //Обмен 
-			A9[size9 - 1 - i] = buffer;
-
-		}
 
 		cout << "\nМассив после сортировки:\n";
 		for (int k = 0; k < size9; k++)
