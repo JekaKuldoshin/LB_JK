@@ -1,51 +1,51 @@
-﻿//8. Проверить, является ли натуральное число N с i - й по j - ю цифру палиндромом.
-#include <iostream>
-#include <string>
+﻿#include <iostream>
 
 using namespace std;
 
-int polidrom(string word)              
+bool GetIsPalindrom(int Value, int StartIndex, int EndIndex, int DigCount)
 {
-    int len = word.length();             /* Создал переменную len-> приравнял к количеству елементов*/
-    for (int i = 0; i < len / 2; i++)       /*Натуральное число можно расмотреть как одномерный массив*/   
-    {                                              /*i < len / 2 находим количество сравниваний елементов 
-                                           (допустип 5/2=2 Результатом целоцисленного деления является целое число с отброшенной плавающей точкой)*/ 
-        if (word[i] != word[len - i - 1])       /*В этом действие идет сравнение елементов.Например: 1 елемент с последним.*/
-        {                                        /*len - i - 1 это для того чтобы мы могли сравнивать справа налево*/ 
-            return false;                        
-        }                                       /* если хоть одна буква не совпадает, программа возврашает False*/
-    }
+    if (StartIndex == EndIndex)       /*программа будет находить последовательно первое, далее последние число,   */
+        return true;                  /*до тех пор пока А=В, а если А!=В переходим к return false*/
+
+    int  FirstDig = (int)(Value / pow(10, DigCount - StartIndex)) % 10,        /*находит число А*/
+        SecondDig = (int)(Value / pow(10, DigCount - EndIndex)) % 10;          /*находит число В*/
+
+    if (FirstDig == SecondDig)                                                /*в том случае когда А=В и Первое число = последнему,*/
+        return GetIsPalindrom(Value, StartIndex + 1, EndIndex - 1, DigCount);   /*переходим к Рекурсии - функция обращается сама к себе*/
+
+    return false;                              /*если А!=В, то мы выходим из рекурсии*/
 }
 
+//void COUT()
 
 int main()
 {
     setlocale(LC_ALL, "rus");
     while (true)
     {
-        string str;
-        cout << "Проверка элемента на палидром                                    |" << endl;
-        cout << "-----------------------------------------------------------------|" << endl;
-        cout << "Примечание: элемент может принимать в себя целые числа или слова |" << endl;
-        cout << "-----------------------------------------------------------------|" << endl;
+        cout << "Проверка элемента на палидром                          |" << endl;
+        cout << "-------------------------------------------------------|" << endl;
+        cout << "Примечание: элемент может принимать в себя целые числа |" << endl;
+        cout << "-------------------------------------------------------|" << endl;
         cout << "Введите элемент ->  ";
-        cin >> str;
-
-        if (polidrom(str))        
+        int  iValue;
+        cin >> iValue;
+        int   DigCount = 1;                              /*создали переменную для нахождения кол-ва чисел */
+        while (iValue / pow(10, DigCount) > 1)
+        {                                                /*создали цикл для нахождения кол-ва чисел*/
+            DigCount++;
+        }
+        bool  bPalindrom = GetIsPalindrom(iValue, 1, DigCount, DigCount);     /*вызываем функцию и передаем значения*/
+        if (bPalindrom)
         {
-            cout << endl << "Элемент является палидромом!";
+            cout << "Элемент (" << iValue << ") является палидромом!" << endl << endl;
         }
         else
         {
-            cout << endl << "Элемент не является палидромом!";
+            cout << "Элемент (" << iValue << ") не является палидромом!" << endl << endl;
         }
 
-        cout << endl;
         system("pause");
         system("cls");
     }
-            return 0;
-    }
-    
-
-
+}
