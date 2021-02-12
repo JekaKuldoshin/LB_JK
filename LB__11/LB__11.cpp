@@ -2,7 +2,7 @@
 
 using namespace std;
 
-bool GetIsPalindrom(int Value, int StartIndex, int EndIndex, int DigCount)
+bool Palindrom(int Value, int StartIndex, int EndIndex, int DigCount)
 {
     if (StartIndex == EndIndex)       /*программа будет находить последовательно первое, далее последние число,   */
         return true;                  /*до тех пор пока А=В, а если А!=В переходим к return false*/
@@ -11,7 +11,7 @@ bool GetIsPalindrom(int Value, int StartIndex, int EndIndex, int DigCount)
         SecondDig = (int)(Value / pow(10, DigCount - EndIndex)) % 10;          /*находит число В*/
 
     if (FirstDig == SecondDig)                                                /*в том случае когда А=В и Первое число = последнему,*/
-        return GetIsPalindrom(Value, StartIndex + 1, EndIndex - 1, DigCount);   /*переходим к Рекурсии - функция обращается сама к себе*/
+        return Palindrom(Value, StartIndex + 1, EndIndex - 1, DigCount);   /*переходим к Рекурсии - функция обращается сама к себе*/
 
     return false;                              /*если А!=В, то мы выходим из рекурсии*/
 }
@@ -34,7 +34,7 @@ int main()
         {                                                /*создали цикл для нахождения кол-ва чисел*/
             DigCount++;
         }
-        bool  bPalindrom = GetIsPalindrom(iValue, 1, DigCount, DigCount);     /*вызываем функцию и передаем значения*/
+        bool  bPalindrom = Palindrom(iValue, 1, DigCount, DigCount);     /*вызываем функцию и передаем значения*/
         if (bPalindrom)
         {
             cout << "Элемент (" << iValue << ") является палидромом!" << endl << endl;
