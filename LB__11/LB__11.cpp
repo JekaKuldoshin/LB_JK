@@ -16,7 +16,6 @@ bool GetIsPalindrom(int Value, int StartIndex, int EndIndex, int DigCount)
     return false;                              /*если А!=В, то мы выходим из рекурсии*/
 }
 
-//void COUT()
 
 int main()
 {
