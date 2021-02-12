@@ -4,7 +4,7 @@ using namespace std;
 
 bool Palindrom(int Value, int StartIndex, int EndIndex, int DigCount)
 {
-    if (StartIndex == EndIndex)       /*программа будет находить последовательно первое, далее последние число,   */
+    if (StartIndex >= EndIndex)       /*программа будет находить последовательно первое, далее последние число,   */
         return true;                  /*до тех пор пока А=В, а если А!=В переходим к return false*/
 
     int  FirstDig = (int)(Value / pow(10, DigCount - StartIndex)) % 10,        /*находит число А*/
