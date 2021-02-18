@@ -12,14 +12,14 @@ using namespace std;
 struct mon
 {
 
-	int sc;
-	string name;
-	unsigned int size;
-	unsigned int mhz;
+	int sc;                       /*год*/
+	string name;                  /*имя*/
+	unsigned int size;            /*диаметр*/
+	unsigned int mhz;             /*частота*/
 };
 
 
-void Bring(mon spis[], int spis_size, int selection)
+void Bring(mon spis[], int spis_size, int selection)         /* функция для ввода с консоли*/
 {
 
 	for (int i = 0; i < N; i++) {
@@ -27,7 +27,7 @@ void Bring(mon spis[], int spis_size, int selection)
 		cout << "| Проект поиска внеземных сигналов №" << i + 1 << " |" << endl;
 		cout << "|-------------------------------------|" << endl;
 		cout << "Введите год -> ";
-		cin >> spis[i].sc;
+		cin >> spis[i].sc;                                      /*вводим в список [1].год */
 		cout << "Введите имя научного руководителя -> ";
 		cin >> spis[i].name;
 		cout << "Введите диаметр антенны (м) -> ";
@@ -35,29 +35,19 @@ void Bring(mon spis[], int spis_size, int selection)
 		cout << "Введите рабочую частоту (МГц) -> ";
 		cin >> spis[i].mhz;
 	}
-
-	/*for (int i = 0; i < N; i++)
-	{
-		cout << setw(10) << spis[i].sc << setw(10) <<
-			spis[i].name << setw(10) << spis[i].size << setw(10) << spis[i].mhz << endl;
-	}*/
-
 }
 
-void byChance(mon spis[], int spis_size, int selection)
+void byChance(mon spis[], int spis_size, int selection)         /*Рандомное заполнение структуры*/
 {
 	for (int i = 0; i < N; i++) {
 		spis[i].sc = rand() % 200 + 1820;
 		spis[i].name = "avtor_" + to_string(rand() % 50 + 100);
-
 		spis[i].size = rand() % 1000 + 10;
 		spis[i].mhz = rand() % 1000 + 10;
-
-
 	}
 }
 
-void Sort(mon spis[])
+void Sort(mon spis[])                        /*Сортировка структуры*/
 {
 	mon temp;
 	for (int i = 0; i < N - 1; i++) {
@@ -70,8 +60,8 @@ void Sort(mon spis[])
 		}
 	}
 }
-
-void Print(mon spis[])
+ 
+void Print(mon spis[])         /*Функция для вывода */
 {
 	system("cls");
 
@@ -117,13 +107,13 @@ link_menu1:
 	cin >> selection;
 
 	if (selection == 1)
-	{
-		Bring(spis, N, selection);
+	{  
+		Bring(spis, N, selection);     /*Ввод с консоли*/
 		goto link_menu2;
 	}
 	if (selection == 2)
 	{
-		byChance(spis, N, selection);
+		byChance(spis, N, selection);  /* Ввод рандомно*/
 	}
 	else
 	{
@@ -154,16 +144,16 @@ link_menu2:
 	if (selection == 2)
 	{
 
-		Print(spis);
+		Print(spis);        /* Обратились к функции вывода*/
 		goto link_menu2;
 	}
 	if (selection == 3)
 	{
-		goto link_menu1;
+		goto link_menu1;       /* Переходы по программе*/
 	}
 	if (selection == 4)
 	{
-		goto link_exit;
+		goto link_exit;       /* Переходы по программе*/
 	}
 	else
 	{
