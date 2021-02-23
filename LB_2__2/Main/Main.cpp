@@ -4,7 +4,7 @@
 #include "Sort.h"
 #include "Print.h"
 
-int main() 
+int main()
 {
 	SetConsoleCP(1251);
 	SetConsoleOutputCP(1251);
