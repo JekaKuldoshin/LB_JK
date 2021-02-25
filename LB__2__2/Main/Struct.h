@@ -35,6 +35,3 @@ struct mon
 #ifndef DEBUG_2
 #define DEBUG_2 cout << endl << "Файл: " << __FILE__ << endl << "Функция: " << __FUNCTION__ << endl << endl;
 #endif
-
-
-//cout << "| " __DATE__ <<" |"<< endl <<  __TIME__ << " |" << endl <<"----------------------------" << endl;

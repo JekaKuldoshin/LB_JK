@@ -21,11 +21,11 @@ link_menu1:
 
 	cout << "Сделайте выбор -> ";
 	cin >> selection;
-	Choice_1
+	Choice_1                      /*Делаем свой выбор через обращение к макросу*/  
 	
 
 	/*------------------------------------------------------------*/
-link_menu2:
+link_menu2:               
 	system("cls");
 	cout << "|                                 Меню                                  |" << endl;
 	cout << "|-----------------------------------------------------------------------|" << endl;
@@ -36,11 +36,9 @@ link_menu2:
 
 	cout << "Сделайте выбор -> ";
 	cin >> selection;
-	Choice_2
+	Choice_2                           /*Делаем свой выбор через обращение к макросу*/
 
 
-
-	
 link_exit:
 	system("cls");
 	cout << "Thanks for your attention!!" << endl;
