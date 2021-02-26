@@ -1,9 +1,9 @@
 #pragma once
+#include <string>
 #include <iostream>
 #include <iomanip>
 #include <windows.h>
 #include <time.h>
-#include <string>
 #include<conio.h>
 using namespace std;
 
