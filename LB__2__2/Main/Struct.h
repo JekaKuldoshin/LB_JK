@@ -7,8 +7,6 @@
 #include<conio.h>
 using namespace std;
 
-#define PRINT_TYPE
-
 #define N 3
 
 struct mon
