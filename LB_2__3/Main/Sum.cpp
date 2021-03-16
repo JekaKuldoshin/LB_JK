@@ -1,19 +1,16 @@
 #include "Sum.h"
 
-void Sum(int arr[], int* p[])
+int Sum(int arr[])
 {
 	system("cls");
 	int result = 0;
 
 	for (int i = 0; i < SIZE; i++)
 	{
-		if (*p[i] > 9)
+		if (arr[i] > 9)
 		{
-			result = *p[i] + result;
+			result = arr[i] + result;
 		}
 	}
-	cout << "Сумма двухзначных чисел -> " <<result;
-	cout << endl;
-	cout << "\nНажмите клавишу Enter для возврата в меню..." << endl;
-	_getch();
+	return result;
 }

@@ -1,8 +1,10 @@
-﻿#include "Struct.h"
-#include "Bring.h"
+﻿#include "Bring.h"
 #include "byChance.h"
 #include "PrintArr.h"
 #include "Sum.h"
+
+#include <conio.h>
+
 
 int main()
 {
@@ -13,7 +15,8 @@ int main()
 
 
 	int arr[SIZE];
-	int* p[SIZE];
+
+
 	int selection;
 link_menu1:
 	system("cls");
@@ -63,16 +66,36 @@ link_menu2:
 
 	cout << "Сделайте выбор -> ";
 	cin >> selection;
-
+	int count = 0;
 	if (selection == 1)
 	{
-		PrintArr(arr, p);            /*Сделали обращение к функции печати массива*/
+		int* NEWarr = PrintArr(arr, count);
+		
+		
+		cout << "Элементы массива -> ";
+		for (int i = 0; i < SIZE; i++)
+		{
+			cout << arr[i] << " ";
+		}
+
+		cout << "Массив для двухзначных чисел -> ";
+		for (int i = 0; i < count; i++)
+			cout << *(NEWarr + i) << " ";
+
+		cout << endl;
+		cout << "\nНажмите клавишу Enter для возврата в меню..." << endl;
+		_getch();
+
 		goto link_menu2;
 	}
 	if (selection == 2)
 	{
 
-		Sum(arr, p);        /* Обратились к функции суммы двухзначных чисел*/
+		/* Обратились к функции суммы двухзначных чисел*/
+		cout << "Сумма двухзначных чисел -> " << Sum(arr);
+		cout << endl;
+		cout << "\nНажмите клавишу Enter для возврата в меню..." << endl;
+		_getch();
 		goto link_menu2;
 	}
 	if (selection == 3)

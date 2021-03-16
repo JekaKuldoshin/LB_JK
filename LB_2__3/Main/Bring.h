@@ -1,3 +1,7 @@
 #pragma once
-#include "Struct.h"
+#include <iostream>
+using namespace std;
+
+#define SIZE 10
+
 void Bring(int arr[]);

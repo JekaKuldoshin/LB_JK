@@ -1,5 +1,6 @@
 #pragma once
-
+#ifndef XT
+#define XT
 
 
 #include <iostream>
@@ -10,7 +11,9 @@
 using namespace std;
 
 
-void Bring(int* array, int size);
+
 void byChance(int* array, int size);
-void PrintArr(int* array, int* p, int size);
-void Sum(int* array, int* p, int size);
+int* PrintArr(int arr[], int& count, int size, int* NEWarr);
+int Sum(int* arr, int size);
+
+#endif

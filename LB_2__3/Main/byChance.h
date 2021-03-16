@@ -1,3 +1,7 @@
 #pragma once
-#include "Struct.h"
+#include <time.h>
+#include <iostream>
+
+#define SIZE 10
+
 void byChance(int arr[]);

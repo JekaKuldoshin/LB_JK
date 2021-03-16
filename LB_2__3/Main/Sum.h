@@ -1,3 +1,7 @@
 #pragma once
-#include "Struct.h"
-void Sum(int arr[], int* p[]);
+
+#include <iostream>
+
+#define SIZE 10
+
+int Sum(int arr[]);
