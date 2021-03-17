@@ -77,7 +77,7 @@ link1:
 
 
 
-
+        delete[] arr;
         delete[] NEWarr;
     }
 link_exit:

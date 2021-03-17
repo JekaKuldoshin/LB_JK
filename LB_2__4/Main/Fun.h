@@ -1,6 +1,6 @@
 #pragma once
-#ifndef XT
-#define XT
+#ifndef FX
+#define FX
 
 
 #include <iostream>
