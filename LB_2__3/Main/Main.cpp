@@ -1,136 +1,75 @@
-﻿#include "Bring.h"
-#include "byChance.h"
-#include "PrintArr.h"
-#include "Sum.h"
-
-#include <conio.h>
-
+﻿#include "Fun.h"
 
 int main()
 {
-	SetConsoleCP(1251);
-	SetConsoleOutputCP(1251);
-	srand(time(NULL));
+    SetConsoleCP(1251);
+    SetConsoleOutputCP(1251);
+    srand(time(NULL));
+link1:
+    int arr[size]{};
+    int NEWarr[size]{};
+    int check = 1;
+    int count = 0;
+    int result = 0;
+    int selection;
 
+    while (check)
+    {
+        system("cls");
+        cout << "Количество елементов массива -> " << size << endl << endl;
 
+        byChance(arr);
+        cout << "Элементы массива -> ";
+        for (int i = 0; i < size; i++)
+        {
 
-	int arr[SIZE];
+            cout << *(arr + i) << " ";
+        }
+        cout << "\n\n";
 
+        cout << "Массив для двухзначных чисел -> ";
 
-	int selection;
-link_menu1:
-	system("cls");
-	cout << "|               Меню                |" << endl;
-	cout << "|-----------------------------------|" << endl;
-	cout << "| 1 – ввод с экрана                 |" << endl;
-	cout << "| 2 – случайным образом             |" << endl;
-	cout << "|-----------------------------------|" << endl;
-	cout << "Сделайте выбор -> ";
-	cin >> selection;
+        int* NEWarrr = PrintArr(arr, count, NEWarr); /*Сделали обращение к функции печати массива*/
 
-	/*-----------------------------------------------------------*/
-//#if PRINT_TYPE == 1
-//		Bring(arr);     /*Ввод с консоли*/	goto link_menu2;
-//#endif
-//
-//#if PRINT_TYPE == 2
-//	byChance(arr);  /* Ввод рандомно*/
-//#endif
-	/*-------------------------------------------------------------*/
+        for (int i = 0; i < count; i++)
+        {
+            cout << *(NEWarr + i) << " ";
+        }
+        cout << endl;
+        cout << endl;
 
-	if (selection == 1)
-	{
-		Bring(arr);     /*Ввод с консоли*/
-		goto link_menu2;
-	}
-	if (selection == 2)
-	{
-		byChance(arr);  /* Ввод рандомно*/
-	}
-	else
-	{
-		cout << "\nОшибка! Пункт меню отсутствует!" << endl;
-		_getch();
-		goto link_menu1;
-	}
+        cout << "Сумма двухзначных чисел -> " << Sum(NEWarr, count);
+        cout << endl;
+        cout << "\nНажмите клавишу Enter для возврата в меню..." << endl;
+        _getch();
+        system("cls");
 
-	/*-------------------------------------------------------------*/
-link_menu2:
-	system("cls");
-	cout << "|                                    Меню                                  |" << endl;
-	cout << "|--------------------------------------------------------------------------|" << endl;
-	cout << "| 1 – вывод массива                    | 3 - вернутся в главное меню       |" << endl;
-	cout << "| 2 – вывод суммы двухзначных чисел    | 4 - выход                         |" << endl;
-	cout << "|--------------------------------------------------------------------------|" << endl;
-
-
-	cout << "Сделайте выбор -> ";
-	cin >> selection;
-	int count = 0;
-	if (selection == 1)
-	{
-		int* NEWarr = PrintArr(arr, count);
-		
-		
-		cout << "Элементы массива -> ";
-		for (int i = 0; i < SIZE; i++)
-		{
-			cout << arr[i] << " ";
-		}
-
-		cout << "Массив для двухзначных чисел -> ";
-		for (int i = 0; i < count; i++)
-			cout << *(NEWarr + i) << " ";
-
-		cout << endl;
-		cout << "\nНажмите клавишу Enter для возврата в меню..." << endl;
-		_getch();
-
-		goto link_menu2;
-	}
-	if (selection == 2)
-	{
-
-		/* Обратились к функции суммы двухзначных чисел*/
-		cout << "Сумма двухзначных чисел -> " << Sum(arr);
-		cout << endl;
-		cout << "\nНажмите клавишу Enter для возврата в меню..." << endl;
-		_getch();
-		goto link_menu2;
-	}
-	if (selection == 3)
-	{
-		goto link_menu1;       /* Переходы по программе*/
-	}
-	if (selection == 4)
-	{
-		goto link_exit;       /* Переходы по программе*/
-	}
-	else
-	{
-		cout << "\nОшибка! Пункт меню отсутствует!" << endl;
-		_getch();
-		goto link_menu2;
-	}
+        cout << "|     Меню    |" << endl;
+        cout << "|-------------|" << endl;
+        cout << "| 1 – повтор  |" << endl;
+        cout << "| 2 - выход   |" << endl;
+        cout << "|-------------|" << endl;
+        cout << "Ввод -> ";
+        cin >> selection;
+        if (selection == 1)
+        {
+            goto link1;
+        }
+        if (selection == 2)
+        {
+            goto link_exit;
+        }
+        else
+        {
+            cout << "\nОшибка! Пункт меню отсутствует!" << endl;
+            _getch();
+        }
+    }
 link_exit:
-	system("cls");
-	cout << "Thanks for your attention!!" << endl;
+    system("cls");
+    cout << "Thanks for your attention!!" << endl;
 
-	return 0;
-
-
-
-	//for (int i = 0; i < SIZE; i++)
-	//{
-	//	p[i] = &arr[i];     //p[i] = A + i
-	//	cout << *p[i] << " ";
-	//}
-	//cout << "\n----\n";
-	//for (int i = 0; i < SIZE; i++)
-	//{
-	//	if (*p[i] > 9)
-	//		cout << *p[i] << endl;
-	//}
+    return 0;
 
 
 
