@@ -14,6 +14,6 @@ using namespace std;
 
 void byChance(int* array, int size);
 int* PrintArr(int arr[], int& count, int size, int* NEWarr);
-int Sum(int* arr, int size);
+int Sum(int* NEWarr, int& count);
 
 #endif

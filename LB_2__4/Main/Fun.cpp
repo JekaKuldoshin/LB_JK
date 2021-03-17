@@ -8,24 +8,15 @@ void byChance(int* array, int size)
 	}
 }
 
-int Sum(int* arr, int size)
+int Sum(int* NEWarr, int& count)
 {
-
-	int count = 0;
 	int result = 0;
 
-	for (int i = 0; i < size; i++)
+	for (int i = 0; i < count; i++)
 	{
-		if (*(arr + i) > 9)
-		{
-
-			result = *(arr + i) + result;
-			count++;
-		}
+		result = *(NEWarr + i) + result;
 	}
-
 	return result;
-
 }
 
 int* PrintArr(int arr[], int& count, int size, int* NEWarr)
