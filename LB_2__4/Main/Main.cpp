@@ -12,7 +12,7 @@ link1:
     int result = 0;
     int check = 1;
 
-    int* NEWarr = new int[count];
+    
     while (check)
     {
         system("cls");
@@ -32,9 +32,16 @@ link1:
         {
 
             cout << *(arr + i) << " ";
+            if (*(arr + i) > 9)
+            {
+                count++;
+            }
+
         }
         cout << "\n\n";
         cout << "Массив для двухзначных чисел -> ";
+
+        int* NEWarr = new int[count];
 
         int* NEWarrr = PrintArr(arr, count, size, NEWarr); /*Сделали обращение к функции печати массива*/
 
