@@ -5,7 +5,7 @@
 
 using namespace std;
 
-#define N 12
+#define N 10
 
 int main() 
 {

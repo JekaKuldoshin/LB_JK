@@ -1,64 +1,107 @@
-﻿#include <stdio.h>
-#include <malloc.h>
-#include <stdlib.h>
-#include <algorithm>
-#include <windows.h>
+﻿#include "Matrix.h"
 
-void fill(int*, int);
-
-/*** главная функция ***/
-int main() {
-    SetConsoleCP(1251);
-    SetConsoleOutputCP(1251);
+int main()
+{
+	SetConsoleCP(1251);
+	SetConsoleOutputCP(1251);
+	srand(time(NULL));
+link_menu:
+	int choice = 0;
 
 
-    int* Ar, /* указатель на начало массива */
-        * Cr; /* текущий указатель у массиве */
-    int i,   /* счетчик элементов */
-        S;   /* размерность матрицы */
+	int N;
 
-     /* ввод размерности */
-    printf("Введите размерность матрицы >");
-    scanf_s("%d", &S);
-    /* проверка размерности */
-    if (S <= 0) {
-        printf("Размерность слишком мала\n");
-        exit(0);
-    }
-    if (S > 24) {
-        printf("Размерность слишком велика\n");
-        exit(0);
-    }
-    printf("S=%d\n", S);
-    /* выделение памяти */
-    if ((Ar = (int*)malloc(sizeof(int) * S * S)) == NULL) {
-        printf("Недостаток памяти\n");
-        exit(0);
-    }
-    /* обращение к функции заполнения матрицы */
-    fill(Ar, S);
-    /* вывод матрицы */
-    for (Cr = Ar, i = 0; i < S * S; Cr++, i++) {
-        printf("%3d", *Cr);
-        if (i % S == S - 1) putchar('\n');
-    }
-    /* освобождение памяти */
+	printf("Введите кол-во строк и столбцов -> ");
+	scanf_s("%d", &N);
+	system("cls");
 
-    free(Ar);
-    return 0;
+	if (N > 0)
+	{
+		printf("1 - Одномерный как двумерный (*А)  |\n");
+		printf("2 - Двумерный как двумерный  (**А) |\n");
+		printf("3 - Exit                           |\n");
+		printf("------------------------------------\n");
+		printf("Сделайте свой выбор -> ");
+		scanf_s("%d", &choice);
+		system("cls");
+		if (choice == 1)
+		{
+			int* arr = new int[N * N];
+			printf("Одномерный массив ->\n");
+			byChance_1(arr, N);
+			printf("\nОдномерный как двумерный:\n");
+			for (int i = 0; i < N; i++)
+			{
+				for (int j = 0; j < N; j++)
+					printf("%4d", *(arr + i * N + j));
+
+				printf("\n");
+			}
+
+			Action_with_matrix_1(arr, N);
+
+			printf("\nМодернизированный массив: \n");
+
+			for (int i = 0; i < N; i++)
+			{
+				for (int j = 0; j < N; j++)
+					printf("%4d", *(arr + i * N + j));
+
+				printf("\n");
+			}
+
+			//Освобождение памяти
+			delete[] arr;
+			arr = nullptr;
+			printf("\n");
+			printf("Нажмите клавишу Enter для возврата в меню...\n");
+			_getch();
+			system("cls");
+			goto link_menu;
+
+
+		}
+		if (choice == 2)
+		{
+			int** arr = new int* [N];
+			for (int i = 0; i < N; i++)
+			{
+				*(arr + i) = new int[N];
+			}
+
+			printf("Двумерный массив ->\n");
+			byChance_2(arr, N);
+
+			printf("\nМодернизированный массив: \n");
+			Action_with_matrix_2(arr, N);
+			for (int i = 0; i < N; i++) {
+				for (int j = 0; j < N; j++)
+				{
+					printf("%4d", *(*(arr + i) + j));
+				
+				}
+				printf("\n");
+			}
+			printf("\n");
+			
+			for (int i = 0; i < N; i++)
+			{
+				delete[] arr[i];
+			}
+			delete[] arr;
+			printf("Нажмите клавишу Enter для возврата в меню...\n");
+			_getch();
+			system("cls");
+			goto link_menu;
+
+		}
+		if (choice == 3)
+		{
+			return 0;
+		}
+
+
+	}
+
 }
-/*** функция заполнения матрицы ***/
-/* параметры: A - указатель на начало массива
-              s - размерность матрицы */
-void fill(int* A, int s) {
-    int* C;      /* текущий указатель в массиве */
-    short l, r;  /* строка и столбец */
-    int k = 1;     /* текущий член ЛП */
-    for (l = 0, C = A; l < s; l++)     /* перебор строк */
-        for (r = 0; r < s; r++, C++)  /* перебор столбцов */
-          /* условие нулевого значения */
-            if ((r >= fmax(l, s - l - 1)) || (r <= fmin(l, s - l - 1))) *C = 0;
-            else *C = k++;
-    /* конец перебора строк */
-  /* конец перебора столбцов */
-}
+
