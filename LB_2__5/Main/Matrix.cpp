@@ -5,9 +5,7 @@ void byChance_1(int* arr, int N)
     srand(time(0));
     for (int i = 0; i < N * N; i++) {
         *(arr + i) = rand() % 10 - 5;
-        printf("%4d", *(arr + i));
     }
-    printf("\n");
 }
 
 
@@ -38,12 +36,12 @@ void byChance_2(int** arr, int N)
         for (int j = 0; j < N; j++)
         {
             *(*(arr + i) + j) = rand() % 10 - 5;
-            printf("%4d", *(*(arr + i) + j));
+           
         }
-        printf("\n");
+        
     }
 
-    printf("\n");
+    
 }
 
 void Action_with_matrix_2(int** arr, int N)
