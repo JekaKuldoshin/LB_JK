@@ -14,7 +14,7 @@ void delete_str(char* str, int where, int what) {
             j++;
 
         }
-        printf(str);
+        
     }
 
 }
