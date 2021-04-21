@@ -1,20 +1,20 @@
 #include "Fun.h"
 
-void delete_str(char* str, int where, int what) {
+char* delete_str(char* str, int where, int what) {
 
     int i;
-    for (i = 0; str[i]; i++);
+    for (i = 0; *(str + i); i++);
     {
+
         int j = where - 1;
+        while (*(str + j)) {
 
-        while (str[j]) {
 
-
-            str[j] = str[j + what];
+            *(str + j) = *((str + j) + what);
             j++;
 
         }
-        
-    }
 
+    }
+    return str;
 }
