@@ -5,9 +5,9 @@ int main()
     SetConsoleCP(1251);
     SetConsoleOutputCP(1251);
     int i = 0;
-    int choice;
-    char str[N];
-    int where, what;
+    int choice;         //выбор меню
+    char str[N];              
+    int where, what;     //с какого элемента, какое количество
     while (true)
     {
         
@@ -25,7 +25,7 @@ int main()
         case 1:
                 system("cls");
                 printf("Введите строку-> ");
-                for (int i = 0; i < N; i++)
+                for (int i = 0; i < N; i++)     //инициализуирую 
                 {
                     *(str + i) = '\0';
                 }
@@ -78,10 +78,10 @@ int main()
     printf("\n");
     printf("\n");
 
-    for (int i = 0; i < N; i++)
+    for (i = 0; i < N; i++)
     {
         *(str + i) = '\0';
     }
-    delete[] str;       //При использовании этой строчки выбивает ошибку 
+    delete[] str;       //Очистка 
     return 0;
 }
