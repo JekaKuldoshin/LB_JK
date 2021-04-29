@@ -12,18 +12,18 @@
 
 using namespace std;
 
-struct Tabl {
+struct mon {
 	unsigned int sc;              /*год*/
 	char name[10];                /*имя*/
 	unsigned int size;            /*диаметр*/
 	unsigned int mhz;             /*частота*/
 };
 
-void input(Tabl t);
-void random(Tabl t);
-void add_before(Tabl t);
-void add_after(Tabl t);
-void choice_str(Tabl t);
-void print_all_str(Tabl t);
+void input(mon t);
+void random(mon t);
+void add_before(mon t);
+void add_after(mon t);
+void choice_str(mon t);
+void print_all_str(mon t);
 
 #endif

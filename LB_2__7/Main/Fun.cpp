@@ -1,6 +1,6 @@
 #include "fun.h"
 
-void input(Tabl t) { //Функ-я добавления записи в файл 
+void input(mon t) { //Функ-я добавления записи в файл 
 	system("cls");
 	FILE* file_input = NULL;
 	fopen_s(&file_input, "Result.txt", "w");
@@ -30,7 +30,7 @@ void input(Tabl t) { //Функ-я добавления записи в файл
 }
 
 
-void random(Tabl t) {   //Функ-я добавления записи рандомно 
+void random(mon t) {   //Функ-я добавления записи рандомно 
 
 	int random = rand() % 50 + 100;
 	char NAME[6]{ "avtor" };
@@ -56,7 +56,7 @@ void random(Tabl t) {   //Функ-я добавления записи рандомно
 	_getch();
 }
 
-void add_before(Tabl t) {       //Функ-я добавления записи в начало файла 
+void add_before(mon t) {       //Функ-я добавления записи в начало файла 
 	system("cls");
 	int size = 0, i = 0, j = 0;
 	char c;
@@ -151,7 +151,7 @@ void add_before(Tabl t) {       //Функ-я добавления записи в начало файла
 		_getch();
 }
 
-void add_after(Tabl t) {       //Функ-я добавления записи в конец файла 
+void add_after(mon t) {       //Функ-я добавления записи в конец файла 
 
 	system("cls");
 	FILE* file_after;
@@ -179,7 +179,7 @@ void add_after(Tabl t) {       //Функ-я добавления записи в конец файла
 	_getch();
 }
 
-void choice_str(Tabl t) {    //Функ-я выбора строки
+void choice_str(mon t) {    //Функ-я выбора строки
 	system("cls");
 	char c;                   //Переменная для чтения символов, подсчет размера
 	int size = 0;            //Кол-ва строк
@@ -247,7 +247,7 @@ void choice_str(Tabl t) {    //Функ-я выбора строки
 
 }
 
-void print_all_str(Tabl t) {   //Функ-я печати всех строк
+void print_all_str(mon t) {   //Функ-я печати всех строк
 
 	system("cls");
 	FILE* file_out;

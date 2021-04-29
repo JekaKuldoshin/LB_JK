@@ -5,7 +5,7 @@ int main(void) {
 	SetConsoleOutputCP(1251);
 	srand(time(NULL));
 
-	struct Tabl t {};
+	struct mon t {};
 	int choice;
 	while (true)
 	{
