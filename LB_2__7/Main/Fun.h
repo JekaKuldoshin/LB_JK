@@ -1,32 +1,29 @@
 #pragma once
-#ifndef FX
-#define FX
+#ifndef XT
+#define XT
 #define  _CRT_SECURE_NO_WARNINGS
-#include <string>
+
+#include "windows.h"
 #include <iostream>
-#include <iomanip>
-#include <windows.h>
-#include <time.h>
-#include<conio.h>
+#include <ctime>
+#include < stdio.h > 
+#include <conio.h>
+
+
 using namespace std;
 
-#define N 3                    /*количество элементов*/
-//#define PRINT_TYPE 1           /*Выбор в меню*/
-
-struct mon
-{
-
-	int sc;                       /*год*/
-	string name;                  /*имя*/
+struct Tabl {
+	unsigned int sc;              /*год*/
+	char name[10];                /*имя*/
 	unsigned int size;            /*диаметр*/
 	unsigned int mhz;             /*частота*/
 };
 
-//#define PRINT_TYPE_2 if (selection2 == 1) { Sort(spis);            /*Сделали обращение к функции сортировки*/ Print(spis);          /* Обратились к функции вывода*/ goto link_menu2; } if (selection2 == 2) {	Print(spis);        /* Обратились к функции вывода*/	goto link_menu2;}if (selection2 == 3){	goto link_menu1;       /* Переходы по программе*/}if (selection2 == 4){	goto link_exit;       /* Переходы по программе*/}else{	cout << "\nОшибка! Пункт меню отсутствует!" << endl;	_getch();	goto link_menu2;}
-////используется для выбора в меню №2
+void input(Tabl t);
+void random(Tabl t);
+void add_before(Tabl t);
+void add_after(Tabl t);
+void choice_str(Tabl t);
+void print_all_str(Tabl t);
 
-void byChance(mon spis[], int spis_size);
-void Sort(mon spis[]);
-void Print(mon spis[]);
-void Bring(mon spis[], int spis_size);
 #endif

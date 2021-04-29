@@ -1,90 +1,63 @@
-﻿#include "Fun.h"
+﻿#include "fun.h"
+int main(void) {
 
-int main()
-{
 	SetConsoleCP(1251);
 	SetConsoleOutputCP(1251);
 	srand(time(NULL));
 
-	int selection1;
-	int selection2;
-	mon spis[N];
-link_menu1:
-	
-	system("cls");
-	cout << "|                                 Меню                                  |" << endl;
-	cout << "|-----------------------------------------------------------------------|" << endl;
-	cout << "| 1 – Ввод с консоли                    | 3 - Выход                     |" << endl;
-	cout << "| 2 – Ввод рандомно                     |                               |" << endl;
-	cout << "|-----------------------------------------------------------------------|" << endl;
-
-	cout << "Сделайте выбор -> ";
-	cin >> selection1;
-
-	switch (selection1)
+	struct Tabl t {};
+	int choice;
+	while (true)
 	{
-	case 1:
-		Bring(spis, N);     /*Ввод с консоли*/
-		/*goto link_menu2;*/
+	link_menu:
+	system("cls");
+	cout << "|                                            Меню                                           |" << endl;
+	cout << "|-------------------------------------------------------------------------------------------|" << endl;
+	cout << "| 1 – Ввод с экрана и запись в файл           | 4 - Добавить запись в конец файла           |" << endl;
+	cout << "| 2 – Ввод случайным образом и запись в файл  | 5 - Печать одной записи из файла по номеру  |" << endl;
+	cout << "| 3 – Добавить запись в начало файла          | 6 - Печать всех записей из файла            |" << endl;
+	cout << "|-------------------------------------------------------------------------------------------|" << endl;
+	cout << "|                               7 - Выход из программы                                      |" << endl;
+	cout << "|-------------------------------------------------------------------------------------------|" << endl;
+	printf("Ваш выбор -> ");
+	scanf_s("%d", &choice);
+
+	switch (choice) {
+	case(1): input(t);
 		break;
-	case 2:
-		byChance(spis, N);  /* Ввод рандомно*/
-		/*goto link_menu2;*/
+
+	case(2): random(t);
 		break;
-	case 3:
-		goto link_exit;
+
+	case(3):add_before(t);
+		goto link_menu;
 		break;
+
+	case(4): add_after(t);
+		break;
+
+	case(5):
+		choice_str(t);
+		goto link_menu;
+		printf("\n\n\n");
+		break;
+
+	case(6):
+		print_all_str(t);
+		goto link_menu;
+		break;
+
+	case(7):
+		system("cls");
+		printf("Thanks for your attention!!\n");
+		return 0;
 
 	default:
-		cout << "\nОшибка! Пункт меню отсутствует!" << endl;
+		system("cls");
+		printf("Ошибка! Пункт меню отсутствует!\nНажмите на любую клавишу чтобы продолжить...");
 		_getch();
-		goto link_menu1;
+		break;
 	}
-
-	
-
-
-	/*------------------------------------------------------------*/
-link_menu2:
-	system("cls");
-	cout << "|                                 Меню                                  |" << endl;
-	cout << "|-----------------------------------------------------------------------|" << endl;
-	cout << "| 1 – сортировка                    | 3 - обновить числа                |" << endl;
-	cout << "| 2 – печать                        | 4 - выход                         |" << endl;
-	cout << "|-----------------------------------------------------------------------|" << endl;
-
-
-	cout << "Сделайте выбор -> ";
-	cin >> selection2;
-
-	switch (selection2)
-	{
-	case 1:
-		Sort(spis);
-		Print(spis);
-		goto link_menu2;
-		break;
-	case 2:
-		Print(spis);        	
-		goto link_menu2;
-		break;
-	case 3:
-		goto link_menu1;
-		break;
-	case 4:
-		goto link_exit;
-		break;
-
-	default:
-		cout << "\nОшибка! Пункт меню отсутствует!" << endl;	
-		_getch();	
-		goto link_menu2;
 	}
-
-	link_exit:
-	system("cls");
-	cout << "Thanks for your attention!!" << endl;
-
 	return 0;
-
 }
