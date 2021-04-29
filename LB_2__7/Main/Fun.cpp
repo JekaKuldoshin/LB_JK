@@ -2,7 +2,7 @@
 
 void input(mon t) { //Функ-я добавления записи в файл 
 	system("cls");
-	FILE* file_input = NULL;
+	FILE* file_input;
 	fopen_s(&file_input, "Result.txt", "w");
 	if (!file_input) {
 		puts("Ошибка открытия файла.\n");   //Проверка на наличее файла
@@ -14,7 +14,7 @@ void input(mon t) { //Функ-я добавления записи в файл
 	scanf_s("%d", &t.sc);
 	printf("Введите имя научного руководителя -> ");
 	scanf_s("%s", t.name, 10);
-	setbuf(stdin, NULL);
+	setbuf(stdin, NULL);                 //отключаем буферизацию ввода
 	printf("Введите диаметр антены -> ");
 	scanf_s("%d", &t.size);
 	printf("Введите рабочую частоту -> ");
@@ -106,7 +106,7 @@ void add_before(mon t) {       //Функ-я добавления записи в начало файла
 
 		////////////////////////
 
-		FILE* file_add_new_data = NULL;
+		FILE* file_add_new_data;
 		fopen_s(&file_add_new_data, "Result.txt", "w");       //Записывем новые записи в файл
 		if (!file_add_new_data) {
 			puts("Ошибка открытия файла.\n");   //Проверка на наличее файла
@@ -118,7 +118,7 @@ void add_before(mon t) {       //Функ-я добавления записи в начало файла
 		scanf_s("%d", &t.sc);
 		printf("Введите имя научного руководителя -> ");
 		scanf_s("%s", t.name, 10);
-		setbuf(stdin, NULL);
+		setbuf(stdin, NULL);                      //отключаем буферизацию ввода
 		printf("Введите диаметр антены -> ");
 		scanf_s("%d", &t.size);
 		printf("Введите рабочую частоту -> ");
@@ -128,7 +128,7 @@ void add_before(mon t) {       //Функ-я добавления записи в начало файла
 		fclose(file_add_new_data);
 		////////////////////////
 
-		FILE* adding_copied_data = NULL;                //Добавляем прошлые записи
+		FILE* adding_copied_data;                //Добавляем прошлые записи
 		fopen_s(&adding_copied_data, "Result.txt", "a");
 		if (!adding_copied_data) {
 			puts("Ошибка открытия файла.\n");   //Проверка на наличее файла
@@ -165,8 +165,8 @@ void add_after(mon t) {       //Функ-я добавления записи в конец файла
 	printf("Введите год -> ");
 	scanf_s("%d", &t.sc);
 	printf("Введите имя научного руководителя -> ");
-	scanf_s("%s", t.name, 10);
-	setbuf(stdin, NULL);
+	scanf_s("%s", t.name, 10); 
+	setbuf(stdin, NULL);                        //отключаем буферизацию ввода
 	printf("Введите диаметр антены -> ");
 	scanf_s("%d", &t.size);
 	printf("Введите рабочую частоту -> ");
@@ -225,7 +225,7 @@ void choice_str(mon t) {    //Функ-я выбора строки
 		return;
 	}
 
-	FILE* file_print = NULL;
+	FILE* file_print;
 	fopen_s(&file_print, "Result.txt", "r");  //Открываем файл для чтения записей
 	if (!file_print) {
 		puts("Ошибка открытия файла.\n");   //Проверка на наличее файла
