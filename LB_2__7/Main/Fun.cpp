@@ -14,7 +14,7 @@ void input(mon t) { //Функ-я добавления записи в файл
 	scanf_s("%d", &t.sc);
 	printf("Введите имя научного руководителя -> ");
 	scanf_s("%s", t.name, 10);
-	setbuf(stdin, NULL);                 //отключаем буферизацию ввода
+	setbuf(stdin, NULL);                 //отключаем буферизац-0 ию ввода
 	printf("Введите диаметр антены -> ");
 	scanf_s("%d", &t.size);
 	printf("Введите рабочую частоту -> ");
@@ -40,7 +40,7 @@ void random(mon t) {   //Функ-я добавления записи рандомно
 	t.mhz = rand() % 1000 + 10;
 
 	FILE* file_rand;
-	fopen_s(&file_rand, "Result.txt", "w");
+	fopen_s(&file_rand, "Result.txt", "a");
 	if (!file_rand) {
 		puts("Ошибка открытия файла.\n");   //Проверка на наличее файла
 		exit(1);
@@ -250,6 +250,26 @@ void choice_str(mon t) {    //Функ-я выбора строки
 void print_all_str(mon t) {   //Функ-я печати всех строк
 
 	system("cls");
+
+	int size = 0;
+	char c;
+	FILE* foud_size;
+	fopen_s(&foud_size, "Result.txt", "r");       //Читаем файл с записями
+	if (!foud_size) {
+		puts("Ошибка открытия файла!!!\nНажмите на любую клавишу чтобы вернуться в меню...");   //Проверка на наличее файла
+		_getch();
+		return;
+	}
+
+
+	while (true) {                       //Цикл для того чтобы узнать размер 
+		c = fgetc(foud_size);               //ранее заполненых записей
+		if (c == '\n')size++;            //Size++
+		else if (c == EOF)  break;      //пока с == ЕОF - конец файла
+	}
+
+	fclose(foud_size);
+
 	FILE* file_out;
 	fopen_s(&file_out, "Result.txt", "r"); //Открываем файл для чтения записей
 	if (!file_out) {
@@ -258,10 +278,16 @@ void print_all_str(mon t) {   //Функ-я печати всех строк
 		return;
 	}
 	char ch = fgetc(file_out);// чтение первого символов из файла
-	while (!feof(file_out)) { // функция проверки конца файла
-		putchar(ch);          // печать символов на экран
-		ch = fgetc(file_out); // чтение символов из файла
+	
+	while (size!= 0) {    //Цикл будет работать пока не дойдем до последней линии ранее веденных записей 
+		fscanf_s(file_out, "%d", &t.sc);
+		fscanf_s(file_out, "%s", t.name, 10);
+		fscanf_s(file_out, "%d", &t.size);
+		fscanf_s(file_out, "%d", &t.mhz);
+		printf_s("%-4d  %-10s  %-4d  %-4d\n", t.sc, t.name, t.size, t.mhz);
+		size--;
 	}
+	
 	fclose(file_out);
 	printf("\n\n\nНажмите на любую клавишу чтобы вернуться в меню...");
 	_getch();
