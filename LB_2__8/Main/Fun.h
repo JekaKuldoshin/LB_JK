@@ -20,13 +20,13 @@ struct mon {
 	mon* next = NULL;
 };
 
-struct mon* create(void);
-void print(mon* head);
-int search(mon* head);
-struct mon* ADD(int el, mon tt, mon* head);
-struct mon* del(int el, mon* head);
-struct mon* sort(mon* head);
-void addfile(mon* head);
-struct mon* CreateFromFile();
+struct mon* new_spis(void);
+void print_spis(mon* head);
+int search_spis(mon* head);
+struct mon* add_spis(int el, mon tt, mon* head);
+struct mon* del_spis(int el, mon* head);
+struct mon* sort_spis(mon* head,mon tt);
+void addfile_in_spis(mon* head);
+struct mon* create_from_file();
 
 #endif
