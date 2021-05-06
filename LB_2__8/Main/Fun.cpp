@@ -184,7 +184,7 @@ int search_spis(mon* head) {
 			}
 			if (q)
 			{
-				printf("Ошибка! В списке данного имени нет!!!");
+				printf("Ошибка! В списке данного диаметра антены нет!!!");
 				printf("\n\nДля перехода в меню нажмите Enter...");
 				_getch();
 			}
@@ -217,7 +217,7 @@ int search_spis(mon* head) {
 			}
 			if (q)
 			{
-				printf("Ошибка! В списке данного имени нет!!!");
+				printf("Ошибка! В списке данной рабочей частоты нет!!!");
 				printf("\n\nДля перехода в меню нажмите Enter...");
 				_getch();
 			}
@@ -295,10 +295,9 @@ struct mon* del_spis(int el, mon* head) {
 }
 
 struct mon* sort_spis(mon* head, mon tt) {
-	struct mon* temp = head;  //Для нахождения нужной позиции поиска элемента и поставить его на начало списка
 	int choice;      //Для меню
-	int lines = 0;
-	mon* ptr, * trash, * tmp;
+	int lines = 0;       //счетчик для посчета количества строчек
+	mon* ptr, * trash, * tmp;  //Переменные для сортировки
 	while (true)
 	{
 		system("cls");
@@ -312,10 +311,10 @@ struct mon* sort_spis(mon* head, mon tt) {
 		printf("Ваш выбор -> ");
 		scanf_s("%d", &choice);
 		system("cls");
-
-		while (temp != NULL)
+		struct mon* temp = head;  //Для нахождения нужной позиции поиска элемента и поставить его на начало списка
+		while (temp != NULL)      //Цикл для посчета строк
 		{
-			temp = temp->next;
+			temp = temp->next; //переставить указатель temp на следующий за ним элемент
 			lines++;
 		}
 
@@ -324,30 +323,33 @@ struct mon* sort_spis(mon* head, mon tt) {
 		case (1):
 			
 			
-			tmp = (struct mon*)malloc(sizeof(struct mon));
+			tmp = (struct mon*)malloc(sizeof(struct mon));  //Выделение памяти под данные списка
 
-			for (int n = 0; n < lines; n++) {
+			for (int n = 0; n < lines; n++) {  //Цикл под кол-ва строк
 
-				ptr = head;
-				while (ptr->next != NULL) {
+				ptr = head;  //ставили на начало списка
+				while (ptr->next != NULL) {        //переходить к следующему элементу пока не закончаться
 
-					temp = ptr->next;
-					if (ptr->sc >= temp->sc) {
+					temp = ptr->next;  //temp = переход к следующему элементу
+					if (ptr->sc >= temp->sc) {   //сравнивание
 
-						trash = temp->next;
-						*tmp = *ptr;
-						*ptr = *temp;
-						free(temp);
+						trash = temp->next;  //trash = переход к следующему элементу
+						*tmp = *ptr;       //обмен
+						*ptr = *temp;      //обмен
+						free(temp);        //очистка temp
 						ptr->next = (struct mon*)malloc(sizeof(struct mon));
-						*ptr->next = *tmp;
-						ptr->next->next = trash;
+						*ptr->next = *tmp;   //ptr переходит к следующему элементу = *tmp 
+						ptr->next->next = trash; // убраем связь
 					}
 
 					ptr = ptr->next;
 				}
 
 			}
-			free(tmp);
+			free(tmp);       //очистка tmp
+			system("cls");
+			printf("Успех!!\nСортировка списка по году было выполнено!\n\nДля перехода в меню нажмите Enter...");
+			_getch();
 			break;
 
 
@@ -360,8 +362,8 @@ struct mon* sort_spis(mon* head, mon tt) {
 				while (ptr->next != NULL) {
 
 					temp = ptr->next;
-					if (strcmp(ptr->name, temp->name) > 0) {
-
+					if (strcmp(ptr->name, temp->name) > 0) { //Функция побайтно сравнивает 
+						            //коды символов двух строк, на которые указывают аргументы функции.
 						trash = temp->next;
 						*tmp = *ptr;
 						*ptr = *temp;
@@ -375,6 +377,9 @@ struct mon* sort_spis(mon* head, mon tt) {
 				}
 			}
 			free(tmp);
+			system("cls");
+			printf("Успех!!\nСортировка списка по имени было выполнено!\n\nДля перехода в меню нажмите Enter...");
+			_getch();
 			break;
 
 		case (3):
@@ -399,9 +404,11 @@ struct mon* sort_spis(mon* head, mon tt) {
 
 					ptr = ptr->next;
 				}
-
 			}
 			free(tmp);
+			system("cls");
+			printf("Успех!!\nСортировка списка по диаметру антены было выполнено!\n\nДля перехода в меню нажмите Enter...");
+			_getch();
 			break;
 		case (4):
 			tmp = (struct mon*)malloc(sizeof(struct mon));
@@ -428,9 +435,13 @@ struct mon* sort_spis(mon* head, mon tt) {
 
 			}
 			free(tmp);
+			system("cls");
+			printf("Успех!!\nСортировка списка по рабочей частоте было выполнено!\n\nДля перехода в меню нажмите Enter...");
+			_getch();
 			break;
 		case (5):
-			return 0;
+			goto exit;
+			break;
 			
 
 		default:
@@ -441,32 +452,31 @@ struct mon* sort_spis(mon* head, mon tt) {
 
 		}
 	}
-	system("cls");
-	printf("Успех!!\nСортировка списка было выполнено!\n\nДля перехода в меню нажмите Enter...");
-	_getch();
+	
+exit:
 	return(head);
 }
 
-void addfile_in_spis(mon* head) {
+void addfile_in_spis(mon* head) {  //Функ-я добавления записи в файл 
 
 	system("cls");
-	mon* temp;
-	temp = head;
-	int i = 1;
+	mon* temp;       //Объявление элемента списка *temp 
+	temp = head;    //Поставили на начало
+	int i = 1;     //Счетчик строчек списка
 
-	FILE* f;
-	fopen_s(&f, "Result.txt", "w");
-	if (!f) {
-			system("cls");
-			puts("Ошибка!!!\nНажмите на любую клавишу чтобы вернуться в меню...");   //Проверка на наличее файла
-			_getch();
+	FILE* file;      
+	fopen_s(&file, "Result.txt", "w");    //Открыли для записи
+	if (file == NULL) {                  //проверка открытия
+		system("cls");
+		puts("Ошибка открытия файла!!!\nНажмите на любую клавишу чтобы вернуться в меню...");   //Проверка на наличее файла
+		_getch();
 			goto link_exit;
 	}
-	while (temp != NULL)
+	while (temp != NULL)     //цикл будет работать пока не дойдет конца temp
 	{
-		fprintf_s(f, "%-4d  %-10s  %-4d  %-4d\n", temp->sc, temp->name, temp->size, temp->mhz);
-		temp = temp->next;
-		i++;
+		fprintf_s(file, "%-4d  %-10s  %-4d  %-4d\n", temp->sc, temp->name, temp->size, temp->mhz);
+		temp = temp->next;  //переход к следующему
+		i++;               //Счетчик строчек списка
 	}
 	system("cls");
 	printf("Успех!!\nЗапись списка в файл было выполнено!\n\nДля перехода в меню нажмите любую клавишу...");
@@ -477,28 +487,28 @@ link_exit:;
 struct mon* create_from_file() {
 
 
-	struct mon* head = (struct mon*)malloc(sizeof(struct mon));
-	struct mon* tail = head, * temp = head;
+	struct mon* head = (struct mon*)malloc(sizeof(struct mon)); //Выделение памяти head под данные списка
+	struct mon* tail = head, * temp = head;   //Выделение памяти tail под данные списка b и ставим на начало списка
 	int size = 0, i = 0;
 
 
 	FILE* file = NULL;
-	fopen_s(&file, "Result.txt", "r");
-	if (file == NULL) {
+	fopen_s(&file, "Result.txt", "r");  //Читаем файл с записями
+	if (file == NULL) {       //Проверка на наличее файла
 		system("cls");
 		puts("Ошибка открытия файла!!!\nНажмите на любую клавишу чтобы вернуться в меню...");   //Проверка на наличее файла
 		_getch();
 		goto link_exit;
 	}
-
-	char text;
+	 
+	char text;             //Переменная для ранее заполненых записей
 	while (true) {
-		text = fgetc(file);
-		if (text == '\n')size++;
-		else if (text == EOF) break;
+		text = fgetc(file);        //ранее заполненых записей
+		if (text == '\n')size++;           //Size++ находим размер
+		else if (text == EOF) break;       //пока с == ЕОF - конец файла
 	}
 
-	fseek(file, 0, SEEK_SET);
+	fseek(file, 0, SEEK_SET);       //SEEK_SET - начало файла
 	while (i != size) {
 		fscanf_s(file, "%d", &temp->sc);
 		fscanf_s(file, "%s", temp->name, 10);
@@ -506,11 +516,11 @@ struct mon* create_from_file() {
 		fscanf_s(file, "%d", &temp->mhz);
 
 		i++;
-		tail->next = temp;
-		tail = temp;
+		tail->next = temp;   //переставить указатель tail 
+		tail = temp;        //передали значение 
 		temp = (mon*)malloc(sizeof(mon));
 	}
-	tail->next = NULL;
+	tail->next = NULL; // предпоследний элемент
 
 	fclose(file);
 	system("cls");

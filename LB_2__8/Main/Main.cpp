@@ -30,7 +30,7 @@ int main(void) {
 			case(2):
 				if (head == NULL) {
 					system("cls");
-					printf("Ошибка!!Список отсутствует!!!\n\n");
+					printf("Ошибка! Список отсутствует!!!\n\nНажмите на Enter чтобы продолжить...");
 					_getch();
 					break;
 				}
@@ -42,7 +42,7 @@ int main(void) {
 			case(3):
 				if (head == NULL) {
 					system("cls");
-					printf("Ошибка!!Список отсутствует!!!\n\n");
+					printf("Ошибка! Список отсутствует!!!\n\nНажмите на Enter чтобы продолжить...");
 					_getch();
 					break;
 				}
@@ -54,14 +54,15 @@ int main(void) {
 			case(4):
 				if (head == NULL) {
 					system("cls");
-					printf("Ошибка!!Список отсутствует!!!\n\n");
+					printf("Ошибка! Список отсутствует!!!\n\nНажмите на Enter чтобы продолжить...");
 					_getch();
 					break;
 				}
 				else
 				{
 					system("cls");
-					cout << "Введите номер места для нового элемента -> ";
+					print_spis(head);
+					cout << "\n\nВведите номер места для нового элемента -> ";
 					scanf_s("%d", &el);
 					system("cls");
 					printf("Введите данные:\n");
@@ -85,7 +86,7 @@ int main(void) {
 			case(5):
 				if (head == NULL) {
 					system("cls");
-					printf("Ошибка!!Список отсутствует!!!\n\n");
+					printf("Ошибка! Список отсутствует!!!\n\nНажмите на Enter чтобы продолжить...");
 					_getch();
 					break;
 				}
@@ -105,7 +106,7 @@ int main(void) {
 			case(6):
 				if (head == NULL) {
 					system("cls");
-					printf("Ошибка!!Список отсутствует!!!\n\n");
+					printf("Ошибка! Список отсутствует!!!\n\nНажмите на Enter чтобы продолжить...");
 					_getch();
 					break;
 				}
@@ -116,7 +117,7 @@ int main(void) {
 			case(7):
 				if (head == NULL) {
 					system("cls");
-					printf("Ошибка!!Список отсутствует!!!\n\nНажмите на любую клавишу чтобы продолжить...");
+					printf("Ошибка! Список отсутствует!!!\n\nНажмите на Enter чтобы продолжить...");
 					_getch();
 					break;
 				}
@@ -134,7 +135,7 @@ int main(void) {
 
 			default:
 				system("cls");
-				printf("Ошибка! Пункт меню отсутствует!\nНажмите на любую клавишу чтобы продолжить...");
+				printf("Ошибка! Пункт меню отсутствует!\n\nНажмите на Enter чтобы продолжить...");
 				_getch();
 				break;
 			}

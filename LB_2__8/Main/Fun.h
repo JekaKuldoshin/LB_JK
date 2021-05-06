@@ -20,13 +20,13 @@ struct mon {
 	mon* next = NULL;
 };
 
-struct mon* new_spis(void);
-void print_spis(mon* head);
-int search_spis(mon* head);
-struct mon* add_spis(int el, mon tt, mon* head);
-struct mon* del_spis(int el, mon* head);
-struct mon* sort_spis(mon* head,mon tt);
-void addfile_in_spis(mon* head);
-struct mon* create_from_file();
+struct mon* new_spis(void);              //Структура для заполнения списка
+void print_spis(mon* head);             //Функция для вывода списка
+int search_spis(mon* head);            //Функция для поиска по критерием 
+struct mon* add_spis(int el, mon tt, mon* head);  //Структура для добавления списка
+struct mon* del_spis(int el, mon* head);      //Структура для удаление списка
+struct mon* sort_spis(mon* head,mon tt);   //Структура для сортировки списка
+void addfile_in_spis(mon* head);     //Функция для добавления списка в файл
+struct mon* create_from_file();     //Структура для создания списка из файла
 
 #endif
