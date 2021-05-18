@@ -2228,6 +2228,7 @@ namespace CppCLRWinformsProjekt {
 		fp->WriteLine("Запад -> " + comboBox7->Text);
 		fp->WriteLine("Cеверо-Запад -> " + comboBox8->Text);
 		fp->Close();
+
 	}
 	};
 }
