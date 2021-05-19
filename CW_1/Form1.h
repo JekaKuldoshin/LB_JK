@@ -13,25 +13,15 @@ namespace CppCLRWinformsProjekt {
 	int check = 31;
 	int sum = 0;
 
-
-	/// <summary>
-	/// Zusammenfassung fьr Form1
-	/// </summary>
 	public ref class Form1 : public System::Windows::Forms::Form
 	{
 	public:
 		Form1(void)
 		{
 			InitializeComponent();
-			//
-			//TODO: Konstruktorcode hier hinzufьgen.
-			//
 		}
 
 	protected:
-		/// <summary>
-		/// Verwendete Ressourcen bereinigen.
-		/// </summary>
 		~Form1()
 		{
 			if (components)
@@ -40,7 +30,6 @@ namespace CppCLRWinformsProjekt {
 			}
 		}
 
-	protected:
 	private: System::Windows::Forms::ComboBox^ comboBox1;
 	private: System::Windows::Forms::ComboBox^ comboBox2;
 	private: System::Windows::Forms::ComboBox^ comboBox3;
@@ -52,8 +41,6 @@ namespace CppCLRWinformsProjekt {
 	private: System::Windows::Forms::Button^ button1;
 	private: System::Windows::Forms::Button^ button2;
 	private: System::Windows::Forms::Button^ button3;
-
-
 	private: System::Windows::Forms::Label^ label2;
 	private: System::Windows::Forms::Label^ label3;
 	private: System::Windows::Forms::Label^ label4;
@@ -79,27 +66,13 @@ namespace CppCLRWinformsProjekt {
 	private: System::Windows::Forms::ToolStripMenuItem^ оПрограммеToolStripMenuItem;
 	private: System::Windows::Forms::ToolStripMenuItem^ файлToolStripMenuItem;
 	private: System::Windows::Forms::ToolStripMenuItem^ toolStripMenuItem1;
-
-
 	private: System::Windows::Forms::ToolStripMenuItem^ открытьФайлToolStripMenuItem;
 
-
-
-
-	protected:
-
-
 	private:
-		/// <summary>
-		/// Erforderliche Designervariable.
-		/// </summary>
 		System::ComponentModel::Container^ components;
 
 #pragma region Windows Form Designer generated code
-		/// <summary>
-		/// Erforderliche Methode fьr die Designerunterstьtzung.
-		/// Der Inhalt der Methode darf nicht mit dem Code-Editor geдndert werden.
-		/// </summary>
+
 		void InitializeComponent(void)
 		{
 			this->comboBox1 = (gcnew System::Windows::Forms::ComboBox());
@@ -617,18 +590,12 @@ namespace CppCLRWinformsProjekt {
 	private:  double f(double x) { //конкретная функция, которую рисуем
 		double y = (x);
 		return Double::IsNaN(y) ? 0 : y;
-
-
-
 	};
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-
-		/*	mon t;*/
 
 		if (comboBox1->SelectedIndex > -1 || comboBox2->SelectedIndex > -1 || comboBox3->SelectedIndex > -1 || comboBox4->SelectedIndex > -1
 			|| comboBox5->SelectedIndex > -1 || comboBox6->SelectedIndex > -1 || comboBox7->SelectedIndex > -1 || comboBox8->SelectedIndex > -1)
 		{
-
 
 			int pW = pictureBox1->Width, pH = pictureBox1->Height;
 			Bitmap^ img = gcnew Bitmap(pW, pH);
@@ -732,10 +699,6 @@ namespace CppCLRWinformsProjekt {
 				break;
 
 			}
-			/*if (comboBox9->SelectedIndex == 1)
-			{
-				t.Jan[0] = num;
-			}*/
 			Point point1 = Point(x, y);
 
 			switch (comboBox2->SelectedIndex)
@@ -818,10 +781,6 @@ namespace CppCLRWinformsProjekt {
 				sum = sum + 12;
 				break;
 			}
-			/*if (comboBox9->SelectedIndex == 1)
-			{
-				t.Jan[1] == x;
-			}*/
 			Point point2 = Point(x, y);
 
 			switch (comboBox3->SelectedIndex)
@@ -904,10 +863,6 @@ namespace CppCLRWinformsProjekt {
 				sum = sum + 12;
 				break;
 			}
-			/*if (comboBox9->SelectedIndex == 1)
-			{
-				t.Jan[3] == x;
-			}*/
 			Point point3 = Point(x, y);
 
 			switch (comboBox4->SelectedIndex)
@@ -990,10 +945,6 @@ namespace CppCLRWinformsProjekt {
 				sum = sum + 12;
 				break;
 			}
-			/*if (comboBox9->SelectedIndex == 1)
-			{
-				t.Jan[4] == x;
-			}*/
 			Point point4 = Point(x, y);
 
 			switch (comboBox5->SelectedIndex)
@@ -1076,10 +1027,6 @@ namespace CppCLRWinformsProjekt {
 				sum = sum + 12;
 				break;
 			}
-			/*if (comboBox9->SelectedIndex == 1)
-			{
-				t.Jan[5] == x;
-			}*/
 			Point point5 = Point(x, y);
 
 			switch (comboBox6->SelectedIndex)
@@ -1162,11 +1109,6 @@ namespace CppCLRWinformsProjekt {
 				sum = sum + 12;
 				break;
 			}
-			/*if (comboBox9->SelectedIndex == 1)
-			{
-				t.Jan[6] == x;
-			}*/
-
 			Point point6 = Point(x, y);
 
 			switch (comboBox7->SelectedIndex)
@@ -1249,10 +1191,6 @@ namespace CppCLRWinformsProjekt {
 				sum = sum + 12;
 				break;
 			}
-			/*if (comboBox9->SelectedIndex == 1)
-			{
-				t.Jan[7] == x;
-			}*/
 			Point point7 = Point(x, y);
 
 			switch (comboBox8->SelectedIndex)
@@ -1335,10 +1273,6 @@ namespace CppCLRWinformsProjekt {
 				sum = sum + 12;
 				break;
 			}
-			/*if (comboBox9->SelectedIndex == 1)
-			{
-				t.Jan[8] == x;
-			}*/
 			Point point8 = Point(x, y);
 
 			if (check < 0)
@@ -1378,7 +1312,6 @@ namespace CppCLRWinformsProjekt {
 				g->DrawPolygon(gPen, curvePoints);
 				this->pictureBox1->Image = img; //присвоение и отображение изображения в PictureBox
 
-
 			}
 		}
 		else
@@ -1387,33 +1320,7 @@ namespace CppCLRWinformsProjekt {
 
 		}
 
-
-		//DelegatePtr^ f = gcnew DelegatePtr(this, &Form1::f);
-		//double x1 = -1., x2 = 10., s = 0.25; //границы рисования
-		//double x = x1;
-		//double y;
-		//System::Collections::Generic::List<PointF>^ Points =
-		//	gcnew System::Collections::Generic::List<PointF>(); //коллекция точек графика
-		//while (x < x2) {
-		//	y = f(x);
-		//	Points->Add(PointF(x * unit, y * unit));
-		//	//добавляем точку в коллекцию. Полученные координаты сразу переводим в экранные единицы
-		//	x += s;
-		//}
-		//g->DrawLines(Pens::Green, Points->ToArray()); //рисование линий графика
-		//delete g; //освобождение ресурсов устройства рисования
-		//this->pictureBox1->Image = img; //присвоение и отображение изображения в PictureBox
 	}
-
-
-
-
-
-
-		   //private: System::Void pictureBox2_Click(System::Object^ sender, System::EventArgs^ e) {
-		   //	pictureBox2->Image = Image::FromFile("D:\\LB_JK\\LB_JK\\CW_1\\WindRose.PNG");
-		   //	
-		   //}
 
 	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
 
@@ -1439,12 +1346,9 @@ namespace CppCLRWinformsProjekt {
 			graf->TranslateTransform((float)mX, -(float)mY); //смещаем нулевую координату на пересечение осей
 			//рисуем график:
 
-
-
 			double x, y;
 			double s = 0.25; //границы рисования
-			/*Pen^ gPen = gcnew Pen(Color::Red, 1);*/
-
+			
 			switch (comboBox1->SelectedIndex)
 			{
 			case 0:
@@ -1527,10 +1431,7 @@ namespace CppCLRWinformsProjekt {
 				break;
 
 			}
-			/*if (comboBox9->SelectedIndex == 1)
-			{
-				t.Jan[1] = x;
-			}*/
+			
 			Point point1 = Point(x, y);
 
 			switch (comboBox2->SelectedIndex)
@@ -1613,10 +1514,7 @@ namespace CppCLRWinformsProjekt {
 				sum = sum + 12;
 				break;
 			}
-			/*if (comboBox9->SelectedIndex == 1)
-			{
-				t.Jan[2] = x;
-			}*/
+		
 			Point point2 = Point(x, y);
 
 			switch (comboBox3->SelectedIndex)
@@ -1699,10 +1597,7 @@ namespace CppCLRWinformsProjekt {
 				sum = sum + 12;
 				break;
 			}
-			/*if (comboBox9->SelectedIndex == 1)
-			{
-				t.Jan[3] = x;
-			}*/
+			
 			Point point3 = Point(x, y);
 
 			switch (comboBox4->SelectedIndex)
@@ -1785,10 +1680,7 @@ namespace CppCLRWinformsProjekt {
 				sum = sum + 12;
 				break;
 			}
-			/*if (comboBox9->SelectedIndex == 1)
-			{
-				t.Jan[4] = x;
-			}*/
+			
 			Point point4 = Point(x, y);
 
 			switch (comboBox5->SelectedIndex)
@@ -1871,10 +1763,7 @@ namespace CppCLRWinformsProjekt {
 				sum = sum + 12;
 				break;
 			}
-			/*if (comboBox9->SelectedIndex == 1)
-			{
-				t.Jan[5] = x;
-			}*/
+		
 			Point point5 = Point(x, y);
 
 			switch (comboBox6->SelectedIndex)
@@ -1957,10 +1846,7 @@ namespace CppCLRWinformsProjekt {
 				sum = sum + 12;
 				break;
 			}
-			/*if (comboBox9->SelectedIndex == 1)
-			{
-				t.Jan[6] = x;
-			}*/
+		
 
 			Point point6 = Point(x, y);
 
@@ -2044,10 +1930,7 @@ namespace CppCLRWinformsProjekt {
 				sum = sum + 12;
 				break;
 			}
-			/*if (comboBox9->SelectedIndex == 1)
-			{
-				t.Jan[7] = x;
-			}*/
+			
 			Point point7 = Point(x, y);
 
 			switch (comboBox8->SelectedIndex)
@@ -2170,9 +2053,8 @@ namespace CppCLRWinformsProjekt {
 		{
 			MessageBox::Show("Ошибка!\nВы не выбрали направление ветра", "Error 1");
 		}
-
-
 	}
+
 	private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
 		label1->Text = "";
 		label12->Text = "";
@@ -2195,8 +2077,6 @@ namespace CppCLRWinformsProjekt {
 		comboBox6->SelectedIndex = -1;
 		comboBox7->SelectedIndex = -1;
 		comboBox8->SelectedIndex = -1;
-
-		/*comboBox1->Items->RemoveAt(comboBox1->SelectedIndex);*/ /*используется для удаление выбранного comboBox*/
 	}
 
 	private: System::Void Form1_Load(System::Object^ sender, System::EventArgs^ e) {
@@ -2213,10 +2093,7 @@ namespace CppCLRWinformsProjekt {
 		System::Diagnostics::Process::Start("D:\\LB_JK\\LB_JK\\CW_1\\Направление ветра.txt");
 	}
 	private: System::Void toolStripMenuItem1_Click(System::Object^ sender, System::EventArgs^ e) {
-		/*mon t;*/
 		System::IO::StreamWriter^ fp = System::IO::File::CreateText("D:\\LB_JK\\LB_JK\\CW_1\\Направление ветра.txt");
-
-
 
 		fp->WriteLine("Направления ветров:\n");
 		fp->WriteLine("Cевер -> " + comboBox1->Text);
