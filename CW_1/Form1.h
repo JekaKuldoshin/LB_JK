@@ -10,8 +10,7 @@ namespace CppCLRWinformsProjekt {
 	using namespace System::Drawing;
 	using namespace System::Drawing::Drawing2D;
 
-	int check = 31;
-	int sum = 0;
+
 
 	public ref class Form1 : public System::Windows::Forms::Form
 	{
@@ -585,12 +584,9 @@ namespace CppCLRWinformsProjekt {
 		}
 #pragma endregion
 	public: int unit = 25; //шаг в пискелах
-	public: delegate double DelegatePtr(double); //тип функции для рисования
+		  int check = 31;
+		  int sum = 0;
 
-	private:  double f(double x) { //конкретная функция, которую рисуем
-		double y = (x);
-		return Double::IsNaN(y) ? 0 : y;
-	};
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
 
 		if (comboBox1->SelectedIndex > -1 || comboBox2->SelectedIndex > -1 || comboBox3->SelectedIndex > -1 || comboBox4->SelectedIndex > -1
@@ -614,7 +610,6 @@ namespace CppCLRWinformsProjekt {
 			//рисуем график:
 
 			double x, y;
-			double s = 0.25; //границы рисования
 			Pen^ gPen = gcnew Pen(Color::Red, 1);
 
 			switch (comboBox1->SelectedIndex)
