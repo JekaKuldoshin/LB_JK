@@ -2101,6 +2101,7 @@ namespace CppCLRWinformsProjekt {
 		fp->WriteLine("Cеверо-Запад -> " + comboBox8->Text);
 		fp->Close();
 
+
 	}
 	};
 }
