@@ -6,10 +6,10 @@ int main(void) {
 	SetConsoleOutputCP(1251);
 
 	int point = 0, count = 0, size = 0, poz;
-	Tlist* head = NULL;
+	Tlist* head = NULL;       //указатель на начало списка
 	Tlist* next = NULL;
 	Tlist* prev = NULL;
-	Tlist* tail = NULL;
+	Tlist* tail = NULL;      //указатель на конец списка
 
 	while (true)
 	{

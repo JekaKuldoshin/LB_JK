@@ -26,15 +26,15 @@ struct Tlist {       //Структура для передачи данных и перемещения
 };
 
 
-void listCreation(Tlist*& head, Tlist*& tail, int& count, int point, int size);
-void listPrintFromHead(Tlist* head);
-void listPrintFromTail(Tlist* tail);
-int searchByParamFromHead(Tlist* head, int count);
-int searchByParamFromTail(Tlist* tail, int count);
-void addToList(Tlist*& head, int& count, int poz);
-void deleteFromList(Tlist*& head, int& count, int poz);
-void listSorting(Tlist* head, int count);
-void createFile(Tlist* head, int count);
-void createListFromFile(Tlist*& head, Tlist*& tail);
+void listCreation(Tlist*& head, Tlist*& tail, int& count, int point, int size);  //Функция заполнения списка
+void listPrintFromHead(Tlist* head);              //Функция вывода с начала
+void listPrintFromTail(Tlist* tail);             //Функция вывода с конца
+int searchByParamFromHead(Tlist* head, int count);   //Функция посика с начала
+int searchByParamFromTail(Tlist* tail, int count);  //Функция посика с конца
+void addToList(Tlist*& head, int& count, int poz);    //Добавить в список
+void deleteFromList(Tlist*& head, int& count, int poz);     //Удалить из списка
+void listSorting(Tlist* head, int count);              //Сортировка
+void createFile(Tlist* head, int count);             //Создание файла
+void createListFromFile(Tlist*& head, Tlist*& tail);     //Создание списка из файла
 
 #endif
